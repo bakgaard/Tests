@@ -41,33 +41,12 @@ namespace TestaloniumTest
 		public void ReadData_UseSpecificFakeObject_ReturnSpecifiedValue()
 		{
 			//Setup fake database
-			_fakeDatabase.ReadData().Returns(4);
-
-			var data = _target2.GetData();
-
-			Assert.AreEqual(4, data);
-		}
-
-		[Test]
-		public void ReadData_UseAnyFakeObject_ReturnAnyValue()
-		{
-			//Setup fake database
 			var fakeValue = 42;
 			_fakeDatabase.ReadData().Returns(fakeValue);
 
 			var data = _target2.GetData();
 
 			Assert.AreEqual(fakeValue, data);
-		}
-
-		[Test]
-		public void SetData_CheckCall_CallWasMade()
-		{
-			//Setup fake database
-			var fakeValue = 0;
-			_target2.SetDate(fakeValue);
-
-			_fakeDatabase.Received().SetData(fakeValue);
 		}
 
 		[Test]
@@ -81,6 +60,16 @@ namespace TestaloniumTest
 
 			var data = _target2.GetData();
 			Assert.AreEqual(fakeValue, data);
+		}
+
+		[Test]
+		public void SetData_CheckCall_CallWasMade()
+		{
+			//Setup fake database
+			var fakeValue = 0;
+			_target2.SetDate(fakeValue);
+
+			_fakeDatabase.Received().SetData(fakeValue);
 		}
 	}
 }

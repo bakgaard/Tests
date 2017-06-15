@@ -33,7 +33,7 @@ namespace TestaloniumTest
 		}
 
 		[Test]
-		public void CalculateANumber_ValidInput_FailingTest()
+		public void CalculateANumber_ValidInput_GoodOutput()
 		{
 			_target.AddToANumber(2);
 			_target.AddToANumber(4);
@@ -41,7 +41,7 @@ namespace TestaloniumTest
 		}
 
 		[Test]
-		public void CalculateANumber_ValidInput_ValidOutput()
+		public void CalculateANumber_ValidInput_OutputBad()
 		{
 			_target.AddToANumber(2);
 			_target.AddToANumber(4);
