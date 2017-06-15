@@ -1,4 +1,4 @@
-﻿namespace Testalonium
+﻿namespace Testalonium.Interfaces
 {
 	public interface IFakeDatabase
 	{

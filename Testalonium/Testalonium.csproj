@@ -41,9 +41,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FakeDatabase.cs" />
-    <Compile Include="IFakeDatabase.cs" />
-    <Compile Include="ITarget.cs" />
-    <Compile Include="ITarget2.cs" />
+    <Compile Include="Interfaces\IFakeDatabase.cs" />
+    <Compile Include="Interfaces\ITarget.cs" />
+    <Compile Include="Interfaces\ITarget2.cs" />
     <Compile Include="NoConnectionDatabaseException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Target.cs" />

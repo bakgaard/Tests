@@ -2,6 +2,7 @@
 using NUnit.Framework;
 using System;
 using Testalonium;
+using Testalonium.Interfaces;
 
 namespace TestaloniumTest
 {
@@ -11,18 +12,18 @@ namespace TestaloniumTest
 		private ITarget2 _target2;
 		private IFakeDatabase _fakeDatabase;
 
-		#region BeforeAndAfter
+		#region SetupAndTeardown
 		[SetUp]
 		public void Setup()
 		{
 			_fakeDatabase = Substitute.For<IFakeDatabase>();
-			_target = new Target2(_fakeDatabase);
+			_target2 = new Target2(_fakeDatabase);
 		}
 
 		[TearDown]
 		public void TearDown()
 		{
-			_target = null;
+			_target2 = null;
 			_fakeDatabase = null;
 		}
 		#endregion
@@ -33,7 +34,7 @@ namespace TestaloniumTest
 			var db = new FakeDatabase();
 			_target2 = new Target2(db);
 
-			var ex = Assert.Throws<NotImplementedException>(() => _target2.GetData());
+			Assert.Throws<NotImplementedException>(() => _target2.GetData());
 		}
 
 		[Test]
@@ -51,22 +52,35 @@ namespace TestaloniumTest
 		public void ReadData_UseAnyFakeObject_ReturnAnyValue()
 		{
 			//Setup fake database
-			var fakeValue = Arg.Any<int>();
+			var fakeValue = 42;
 			_fakeDatabase.ReadData().Returns(fakeValue);
 
 			var data = _target2.GetData();
 
-			Assert.AreEqual(4, data);
+			Assert.AreEqual(fakeValue, data);
+		}
+
+		[Test]
+		public void SetData_CheckCall_CallWasMade()
+		{
+			//Setup fake database
+			var fakeValue = 0;
+			_target2.SetDate(fakeValue);
+
+			_fakeDatabase.Received().SetData(fakeValue);
 		}
 
 		[Test]
 		public void SetData_UseAnyFakeObject_ReturnAnyValue()
 		{
-			//Setup fake database
+			//Setup fake for "needed" call
 			var fakeValue = Arg.Any<int>();
 			_target2.SetDate(fakeValue);
 
-			_fakeDatabase.Received().SetData(fakeValue);
+			_fakeDatabase.ReadData().Returns(fakeValue);
+
+			var data = _target2.GetData();
+			Assert.AreEqual(fakeValue, data);
 		}
 	}
 }

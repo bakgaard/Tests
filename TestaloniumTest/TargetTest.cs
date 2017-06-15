@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using System;
 using Testalonium;
+using Testalonium.Interfaces;
 
 namespace TestaloniumTest
 {
@@ -9,17 +10,17 @@ namespace TestaloniumTest
 	{
 		private ITarget _target = new Target();
 
-		#region BeforeAndAfter
+		#region SetupAndTeardown
 		//[SetUp]
 		//public void Setup()
 		//{
-		//	_target = new Target();
+		//    _target = new Target();
 		//}
 
 		//[TearDown]
 		//public void TearDown()
 		//{
-		//	_target = null;
+		//    _target = null;
 		//}
 		#endregion
 
@@ -36,7 +37,7 @@ namespace TestaloniumTest
 		{
 			_target.AddToANumber(2);
 			_target.AddToANumber(4);
-			Assert.AreEqual(6, _target.NumberToGet);			
+			Assert.AreEqual(6, _target.NumberToGet);
 		}
 
 		[Test]
@@ -50,9 +51,8 @@ namespace TestaloniumTest
 		[Test]
 		public void ExceptionThrower_ShouldTrigger_WillTrigger()
 		{
-			var ex = Assert.Throws<ArgumentException>( () => _target.ExceptionThrower(true));		
+			Assert.Throws<ArgumentException>(() => _target.ExceptionThrower(true));
 		}
-
 
 		//Multiple Tests
 		[TestCase(2.0, ExpectedResult = 4)]
