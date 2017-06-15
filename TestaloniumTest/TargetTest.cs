@@ -14,13 +14,13 @@ namespace TestaloniumTest
 		//[SetUp]
 		//public void Setup()
 		//{
-		//    _target = new Target();
+		//	_target = new Target();
 		//}
 
 		//[TearDown]
 		//public void TearDown()
 		//{
-		//    _target = null;
+		//	_target = null;
 		//}
 		#endregion
 
@@ -33,7 +33,7 @@ namespace TestaloniumTest
 		}
 
 		[Test]
-		public void CalculateANumber_ValidInput_ValidOutput()
+		public void CalculateANumber_ValidInput_FailingTest()
 		{
 			_target.AddToANumber(2);
 			_target.AddToANumber(4);
@@ -41,7 +41,7 @@ namespace TestaloniumTest
 		}
 
 		[Test]
-		public void CalculateANumber_ValidInput_FailingTest()
+		public void CalculateANumber_ValidInput_ValidOutput()
 		{
 			_target.AddToANumber(2);
 			_target.AddToANumber(4);
