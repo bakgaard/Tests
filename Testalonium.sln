@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testalonium", "Testalonium\Testalonium.csproj", "{FE68DAA8-A9E8-45E4-8F04-06C6432C98F2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{AB34C6C5-DC7D-4992-BDD6-1940A5FED892}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestaloniumTest", "TestaloniumTest\TestaloniumTest.csproj", "{72ABE2E8-ECA0-4516-881B-2E2CFEB72C96}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FE68DAA8-A9E8-45E4-8F04-06C6432C98F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE68DAA8-A9E8-45E4-8F04-06C6432C98F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE68DAA8-A9E8-45E4-8F04-06C6432C98F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE68DAA8-A9E8-45E4-8F04-06C6432C98F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72ABE2E8-ECA0-4516-881B-2E2CFEB72C96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72ABE2E8-ECA0-4516-881B-2E2CFEB72C96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72ABE2E8-ECA0-4516-881B-2E2CFEB72C96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72ABE2E8-ECA0-4516-881B-2E2CFEB72C96}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{72ABE2E8-ECA0-4516-881B-2E2CFEB72C96} = {AB34C6C5-DC7D-4992-BDD6-1940A5FED892}
+	EndGlobalSection
+EndGlobal
